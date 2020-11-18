@@ -19,15 +19,12 @@ def notCardError(first):
 
 def color(first, guess):
     notCardError(first)
-    if guess == 'red':
-        return first.color == 'red'
-    else:
-        return first.color == 'black'
+    return first.color == guess
 
 def upDown(first, second, guess):
     notCardError(second)
     if on(first, second):
-        return 'on'
+        return guess == 'on'
     elif guess == 'up':
         return second.num > first.num
     else:
@@ -36,7 +33,7 @@ def upDown(first, second, guess):
 def inOut(first, second, third, guess):
     notCardError(third)
     if on(second, third):
-        return 'on'
+        return guess == 'on'
     elif guess == 'out':
         if first.num > second.num:
             return third.num > first.num or third.num < second.num
@@ -51,6 +48,6 @@ def inOut(first, second, third, guess):
 def suite(first, second, third, fourth, guess):
     notCardError(fourth)
     if on(third, fourth):
-        return 'on'
+        return guess == 'on'
     else:
         return guess == fourth.suite
