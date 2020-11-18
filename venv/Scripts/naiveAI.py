@@ -7,7 +7,8 @@ import statistics
 DECK = [2,3,4,5,6,7,8,9,10,11,12,13,14]
 
 def colorGuess():
-    return 'black'
+    colors = ['red', 'black']
+    return colors[random.randrange(0, 2)]
 
 def upDownGuess(num):
     if num < statistics.median(DECK):
@@ -19,8 +20,12 @@ def upDownGuess(num):
         return choices[random.randrange(0,2)]
     
 def inOutGuess(num1,num2):
-    inside = abs(num1-num2)
-    outside = max(DECK) - inside
+    inside = abs(num1-num2) - 1
+    if num1 == num2:
+        outtie = 1
+    else:
+        outtie = 2
+    outside = len(DECK) - inside - outtie
     if inside > outside:
         return 'in'
     elif inside < outside:
@@ -32,5 +37,3 @@ def inOutGuess(num1,num2):
 def suiteGuess():
     suites = ['diamonds', 'spades', 'clubs', 'hearts']
     return suites[random.randrange(0, 4)]
-
-
