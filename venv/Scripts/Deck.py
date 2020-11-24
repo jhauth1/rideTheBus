@@ -6,7 +6,7 @@ from statistics import mean
 import naiveAI as AI
 
 def getDeck():
-    # Ace low for now
+    # Ace high
     deck = []
     suites = ['diamonds', 'hearts', 'clubs', 'spades']
     for x in range(2, 15):
@@ -20,7 +20,7 @@ def deck4(deck):
         if len(deck) >= 4:
              return play(deck)
         else:
-            return 0
+            return play()
 
 def play(deck = False):
     score = 0

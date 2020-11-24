@@ -8,7 +8,6 @@ class card():
             self.color = 'black'
 
 def on(old, new):
-    # May just be the most recent
     return new.num == old.num
 
 def notCardError(first):

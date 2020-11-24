@@ -5,7 +5,7 @@ import math
 
 start_time = time.time()
 scores = []
-for x in range(0, 100000):
+for x in range(0, 10000000):
     scores.append(Deck.play())
 print(mean(scores))
 time = (time.time() - start_time)
