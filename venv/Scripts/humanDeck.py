@@ -8,9 +8,8 @@ def getDeck():
     deck = []
     suites = ['diamonds', 'hearts', 'clubs', 'spades']
     for x in range(1, 14):
-        for y, suite in enumerate(suites):
-            card = Cards.card(x, suite)
-            deck.append(card)
+        for suite in suites:
+            deck.append(Cards.card(x, suite))
     random.shuffle(deck)
     return deck
 
